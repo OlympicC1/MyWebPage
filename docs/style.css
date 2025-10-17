@@ -1,53 +1,97 @@
- <style>
-        /* Custom styles for the theme and layout */
-        :root {
-            --primary-blue: #3B82F6; /* Tailwind blue-500 */
-            --secondary-grey: #F3F4F6; /* Tailwind gray-100 - Used for background */
-            --text-dark: #1F2937; /* Tailwind gray-800 */
-            --text-light: #4B5563; /* Tailwind gray-600 */
-            --shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.08); /* Slightly more subtle shadow */
-        }
+:root {
+  --base-size: 16px;
+  --content-bg: rgba(10, 10, 14, 0.36);
+  --accent: #ffd166;
+  --text-color: #ffffff;
+  --muted: rgba(255, 255, 255, 0.92);
+}
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--secondary-grey);
-            color: var(--text-dark);
-            scroll-behavior: smooth;
-        }
+html {
+  font-size: var(--base-size);
+}
 
-        .header-gradient {
-            background: linear-gradient(135deg, #1D4ED8, #3B82F6);
-        }
+body {
+  margin: 0;
+  padding: 60px;
+  background-image: url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=2000&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+}
 
-        .card {
-            box-shadow: var(--shadow);
-            background-color: white;
-            transition: transform 0.3s ease;
-        }
+.content {
+  max-width: 520px;
+  background: var(--content-bg);
+  padding: 2.8rem 1.8rem;
+  border-radius: 14px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.48), 0 0 28px rgba(255, 180, 60, 0.04);
+  position: relative;
+  overflow: visible;
+}
 
-        .page-content {
-            min-height: calc(100vh - 8rem);
-        }
+.content h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  background: linear-gradient(90deg, #ffffff 0%, #fff7e6 40%, #ffd166 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.65);
+  animation: lumen-glow 4.5s ease-in-out infinite;
+}
 
-        /* Responsive padding and max width for main content */
-        .main-container {
-            max-width: 1200px;
-        }
+@keyframes lumen-glow {
+  0% { text-shadow: 0 2px 6px rgba(255,215,80,0.18); }
+  50% { text-shadow: 0 3px 12px rgba(255,240,140,0.28); }
+  100% { text-shadow: 0 2px 6px rgba(255,215,80,0.18); }
+}
 
-        .nav-link {
-            transition: background-color 0.2s, transform 0.1s;
-        }
+.content h2 {
+  font-size: clamp(1.15rem, 2.2vw, 1.8rem);
+  font-weight: 300;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  margin-bottom: 20px;
+}
 
-        .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-1px);
-        }
+.content p {
+  font-size: 1.06rem;
+  line-height: 1.75;
+  color: var(--muted);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+}
 
-        /* Image styling to ensure it looks good and fits */
-        .page-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+.cta {
+  background: linear-gradient(90deg, #ffd166, #ff9f1c);
+  padding: 0.8em 1.6em;
+  border-radius: 8px;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.cta:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 30px;
+  }
+
+  .content {
+    padding: 1.2rem;
+  }
+
+  .content h1 {
+    font-size: 2.5rem;
+  }
+}
