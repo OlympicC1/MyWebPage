@@ -41,135 +41,100 @@
   </header>
 
   <!-- Main -->
-  <main class="main-container mx-auto p-4 md:p-8 page-content">
+<main class="main-container mx-auto p-4 md:p-8 page-content">
+<!-- Page 1: Story -->
+<section id="story-page" class="space-y-10">
+  <div class="text-center pt-6 pb-4">
+    <p class="text-lg text-gray-600 font-medium">
+      Meet the best boy, Dude, a Pitbull & German Shepherd mix.
+    </p>
+  </div>
 
-    <!-- Page 1: Story -->
-    <section id="story-page" class="space-y-10">
-      <div class="text-center pt-6 pb-4">
-        <p class="text-lg text-gray-600 font-medium">
-          Meet the best boy, Dude, a Pitbull & German Shepherd mix.
+  <div class="card p-6 md:p-10 rounded-xl">
+    <h2 class="text-2xl font-bold mb-4 border-b pb-2 border-gray-200 text-blue-600">Our Story</h2>
+    <p class="text-lg leading-relaxed text-gray-700">
+      Hi, I'm his person! Dude is a remarkable 100-pound mix of Pitbull and German Shepherd—two incredible breeds
+      known for their strength, intelligence, and deep loyalty. He is the kindest, goofiest, and most gentle dog, but
+      he is also a highly trained service animal. His temperament allows him to be a companion first, while his
+      protective instinct serves his primary job: ensuring my safety and well-being.
+    </p>
+    <p class="text-lg leading-relaxed text-gray-700 mt-4">
+      The bond we share is unbreakable. Training him and working with him every day is a privilege, and he brings a
+      constant sense of calm and security to my life. This page is dedicated to celebrating him, educating others
+      about service animals, and sharing a few important safety tips for interacting with large, protective breeds.
+    </p>
+  </div>
+
+  <div class="card p-6 md:p-10 rounded-xl text-center">
+    <h2 class="text-2xl font-bold mb-6 border-b pb-2 border-gray-200 text-blue-600">Picture: Dude in Action</h2>
+    <img src="mypic.jpg" alt="Dude the service animal in action"
+      class="max-w-full h-auto rounded-lg shadow-lg mx-auto" />
+    <p class="text-sm italic text-gray-500 mt-2">
+      Dude is alert and focused, performing his protective duties.
+    </p>
+  </div>
+
+  <div class="text-center pt-4">
+    <button onclick="showPage('facts')"
+      class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-md transform hover:scale-105">
+      Continue to Facts & Safety Tips →
+    </button>
+  </div>
+</section>
+
+<!-- Page 2: Facts -->
+<section id="facts-page" class="space-y-10 hidden">
+  <div class="text-center pt-6 pb-4">
+    <h2 class="text-3xl font-bold text-blue-600">Dude's Breeds, Facts & Safety</h2>
+    <p class="text-lg text-gray-600 font-medium mt-1">
+      Learn about his heritage and how to safely interact with service animals.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="card p-6 rounded-xl space-y-4">
+      <h3 class="text-xl font-bold text-blue-600 border-b pb-2">Dude's Unique Heritage</h3>
+      <p class="text-gray-700">
+        Dude's blend of Pitbull and German Shepherd creates a dog with exceptional traits. The German Shepherd
+        brings incredible intelligence, courage, and a strong work ethic—traits that make them premier service and
+        working dogs. The Pitbull lineage contributes tremendous stability, a people-loving nature, and a
+        soft-hearted disposition, especially towards family.
+      </p>
+      <ul class="list-disc pl-5 text-gray-700 space-y-2">
+        <li><strong>Intelligence:</strong> German Shepherds are consistently ranked among the most intelligent breeds.</li>
+        <li><strong>Dedication:</strong> Pitbulls are often called "nanny dogs" for their gentle loyalty.</li>
+        <li><strong>Balance:</strong> This cross creates a powerful protector and affectionate companion.</li>
+      </ul>
+    </div>
+
+    <div class="card p-6 rounded-xl space-y-4">
+      <h3 class="text-xl font-bold text-blue-600 border-b pb-2">Working Dogs & Rescue Units</h3>
+      <p class="text-gray-700">
+        Beyond individual service, large, dedicated breeds like Dude's ancestors are critical members of society.
+        They serve daily in many essential roles:
+      </p>
+      <ul class="list-disc pl-5 text-gray-700 space-y-2">
+        <li><strong>Search & Rescue (SAR):</strong> German Shepherds save lives after disasters.</li>
+        <li><strong>Therapy & Support:</strong> Pitbulls and Shepherds provide stability for veterans and patients.</li>
+        <li><strong>Detection Work:</strong> They excel in police, bomb, and drug detection units.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card p-6 md:p-10 rounded-xl">
+    <h3 class="text-2xl font-bold mb-4 border-b pb-2 border-gray-200 text-blue-600">
+      Safety Tips for Approaching Large Working Dogs
+    </h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-4 bg-yellow-50/50 rounded-lg border border-yellow-200">
+        <p class="font-bold text-yellow-800">1. Always Ask First</p>
+        <p class="text-sm text-gray-700 mt-1">
+          Never assume you can pet or approach a service animal. Always ask the handler first.
         </p>
       </div>
+      <div class="p-4 bg-yellow-50/50
 
-      <div class="card p-6 md:p-10 rounded-xl">
-        <h2 class="text-2xl font-bold mb-4 border-b pb-2 border-gray-200 text-blue-600">Our Story</h2>
-        <p class="text-lg leading-relaxed text-gray-700">
-          Hi, I'm his person! Dude is a remarkable 100-pound mix of Pitbull and German Shepherd—two incredible breeds
-          known for their strength, intelligence, and deep loyalty. He is the kindest, goofiest, and most gentle dog, but
-          he is also a highly trained service animal. His temperament allows him to be a companion first, while his
-          protective instinct serves his primary job: ensuring my safety and well-being.
-        </p>
-        <p class="text-lg leading-relaxed text-gray-700 mt-4">
-          The bond we share is unbreakable. Training him and working with him every day is a privilege, and he brings a
-          constant sense of calm and security to my life. This page is dedicated to celebrating him, educating others
-          about service animals, and sharing a few important safety tips for interacting with large, protective breeds.
-        </p>
-      </div>
-
-      <div class="card p-6 md:p-10 rounded-xl text-center">
-        <h2 class="text-2xl font-bold mb-6 border-b pb-2 border-gray-200 text-blue-600">Picture: Dude in Action</h2>
-        <img src="mypic.jpg" alt="Dude the service animal in action"
-          class="max-w-full h-auto rounded-lg shadow-lg mx-auto" />
-        <p class="text-sm italic text-gray-500 mt-2">
-          Dude is alert and focused, performing his protective duties.
-        </p>
-      </div>
-
-      <div class="text-center pt-4">
-        <button onclick="showPage('facts')"
-          class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-md transform hover:scale-105">
-          Continue to Facts & Safety Tips →
-        </button>
-      </div>
-    </section>
-
-    <!-- Page 2: Facts -->
-    <section id="facts-page" class="space-y-10 hidden">
-      <div class="text-center pt-6 pb-4">
-        <h2 class="text-3xl font-bold text-blue-600">Dude's Breeds, Facts & Safety</h2>
-        <p class="text-lg text-gray-600 font-medium mt-1">
-          Learn about his heritage and how to safely interact with service animals.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="card p-6 rounded-xl space-y-4">
-          <h3 class="text-xl font-bold text-blue-600 border-b pb-2">Dude's Unique Heritage</h3>
-          <p class="text-gray-700">
-            Dude's blend of Pitbull and German Shepherd creates a dog with exceptional traits. The German Shepherd
-            brings incredible intelligence, courage, and a strong work ethic—traits that make them premier service and
-            working dogs. The Pitbull lineage contributes tremendous stability, a people-loving nature, and a
-            soft-hearted disposition, especially towards family.
-          </p>
-          <ul class="list-disc pl-5 text-gray-700 space-y-2">
-            <li><strong>Intelligence:</strong> German Shepherds are consistently ranked among the most intelligent breeds.</li>
-            <li><strong>Dedication:</strong> Pitbulls are often called "nanny dogs" for their gentle loyalty.</li>
-            <li><strong>Balance:</strong> This cross creates a powerful protector and affectionate companion.</li>
-          </ul>
-        </div>
-
-        <div class="card p-6 rounded-xl space-y-4">
-          <h3 class="text-xl font-bold text-blue-600 border-b pb-2">Working Dogs & Rescue Units</h3>
-          <p class="text-gray-700">
-            Beyond individual service, large, dedicated breeds like Dude's ancestors are critical members of society.
-            They serve daily in many essential roles:
-          </p>
-          <ul class="list-disc pl-5 text-gray-700 space-y-2">
-            <li><strong>Search & Rescue (SAR):</strong> German Shepherds save lives after disasters.</li>
-            <li><strong>Therapy & Support:</strong> Pitbulls and Shepherds provide stability for veterans and patients.</li>
-            <li><strong>Detection Work:</strong> They excel in police, bomb, and drug detection units.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card p-6 md:p-10 rounded-xl">
-        <h3 class="text-2xl font-bold mb-4 border-b pb-2 border-gray-200 text-blue-600">
-          Safety Tips for Approaching Large Working Dogs
-        </h3>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="p-4 bg-yellow-50/50 rounded-lg border border-yellow-200">
-            <p class="font-bold text-yellow-800">1. Always Ask First</p>
-            <p class="text-sm text-gray-700 mt-1">
-              Never assume you can pet or approach a service animal. Always ask the handler first.
-            </p>
-          </div>
-          <div class="p-4 bg-yellow-50/50 rounded-lg border border-yellow-200">
-            <p class="font-bold text-yellow-800">2. Respect Their Job</p>
-            <p class="text-sm text-gray-700 mt-1">
-              If the service animal is wearing a vest or harness, they are working. Don’t distract or feed them.
-            </p>
-          </div>
-          <div class="p-4 bg-yellow-50/50 rounded-lg border border-yellow-200">
-            <p class="font-bold text-yellow-800">3. Gentle Approach</p>
-            <p class="text-sm text-gray-700 mt-1">
-              If permission is given, approach slowly and calmly. Let the dog sniff before petting.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card p-6 md:p-10 rounded-xl text-center">
-        <h2 class="text-2xl font-bold mb-6 border-b pb-2 border-gray-200 text-blue-600">Picture: Dude Relaxing</h2>
-        <img src="8d32eb6e-6e2f-4ee4-8b59-8a14d0858ae0.jpg"
-          alt="Dude relaxing off duty"
-          class="max-w-full h-auto rounded-lg shadow-lg mx-auto" />
-        <p class="text-sm italic text-gray-500 mt-2">
-          Even a service animal needs downtime. Dude exploring nature!
-        </p>
-      </div>
-
-      <div class="text-center pt-4 space-x-4">
-        <button onclick="showPage('story')"
-          class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-md transform hover:scale-105">
-          ← Back to Dude's Story
-        </button>
-        <a href="#top"
-          class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-md transform hover:scale-105 inline-block">
-          Back to Top
-        </a>
-      </div>
-    </section>
-  </main>
+</main>
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-white text-center py-4 mt-10">
