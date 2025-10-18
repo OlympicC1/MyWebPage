@@ -1,21 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="style.css" />
-<meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Welcome to Lumen — a creative space for curious minds.">
-  <title>Welcome to Lumen</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-<body>
-  <main class="content">
-    <h1>Welcome to Lumen</h1>
-    <h2>Your journey begins here</h2>
-    <p>
-      Welcome to a place where ideas take root and soar — a haven for curiosity, playful thinking, and creative daring. Whether you come to question, to create, or simply to connect, you’re among friends. Dive in, stay curious, and discover something worth returning for.
-    </p>
-    <a href="https://olympicc1.github.io/LumenSite/" target="_blank" class="cta">Visit My Site</a>
-  </main>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dude: My Service Animal & Web Star</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+        /**
+         * Simple function to switch between the two "pages" (sections)
+         * in this single-file application.
+         */
+        function showPage(pageName) {
+            const storyPage = document.getElementById('story-page');
+            const factsPage = document.getElementById('facts-page');
+            const storyLink = document.getElementById('story-link');
+            const factsLink = document.getElementById('facts-link');
+
+
+            if (pageName === 'story') {
+                storyPage.classList.remove('hidden');
+                factsPage.classList.add('hidden');
+                storyLink.classList.add('bg-white/10');
+                factsLink.classList.remove('bg-white/10');
+                document.title = "Dude: Story & Pics";
+            } else if (pageName === 'facts') {
+                storyPage.classList.add('hidden');
+                factsPage.classList.remove('hidden');
+                storyLink.classList.remove('bg-white/10');
+                factsLink.classList.add('bg-white/10');
+                document.title = "Dude: Facts & Safety";
+            }
+
+
+            // Scroll to top of the content area for a clean view transition
+            document.getElementById('top').scrollIntoView();
+        }
+
+
+        // Initialize the view on load
+        window.onload = () => {
+            showPage('story');
+        };
+    </script>
 </body>
 </html>
