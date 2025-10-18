@@ -17,13 +17,21 @@ body {
   padding: 0;
 }
 
-/* Header bar */
+/* Header gradient — improved visibility and contrast */
 .header-gradient {
-  background: linear-gradient(135deg, var(--hunter-green), var(--golden-brown));
+  background: linear-gradient(90deg, #2E5234 10%, #5F7A44 50%, #F4E3B2 100%);
   color: var(--pearl-white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
-/* Layout */
+/* Make the title text readable */
+header h1 {
+  color: var(--pearl-white);
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
 .main-container {
   max-width: 1200px;
   margin: 0 auto;
