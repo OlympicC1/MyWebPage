@@ -5,29 +5,78 @@
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
 
+/* Base page styling */
 body {
   background-color: var(--secondary-grey);
   color: var(--text-dark);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
 }
 
+/* Header gradient and layout */
 .header-gradient {
   background: linear-gradient(135deg, #1D4ED8, #3B82F6);
 }
 
+/* Main content container */
+.main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Card layout adjustments */
 .card {
   box-shadow: var(--shadow);
   background-color: white;
+  border-radius: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.main-container {
-  max-width: 1200px;
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
 }
 
+/* Navigation link styles */
 .nav-link {
   transition: background-color 0.2s, transform 0.1s;
 }
 
 .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-1px);
+}
+
+/* Image handling for consistency */
+img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+  margin: 0 auto;
+}
+
+/* Typography tweaks */
+h2, h3 {
+  line-height: 1.3;
+}
+
+p {
+  margin-bottom: 0.75rem;
+}
+
+/* Section spacing */
+section {
+  margin-bottom: 4rem;
+}
+
+/* Footer */
+footer {
+  background-color: #1F2937;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
 }
