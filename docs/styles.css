@@ -1,13 +1,12 @@
 :root {
   --hunter-green: #355E3B;
-  --gold: #DAA520;
   --golden-brown: #B99551;
   --pearl-white: #FAF5E6;
   --accent-yellow: #FFD06B;
   --shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== Base ===== */
+/* GENERAL */
 body {
   background-color: var(--pearl-white);
   color: var(--hunter-green);
@@ -17,89 +16,54 @@ body {
   min-height: 100vh;
 }
 
-/* Utility classes used in HTML */
-.text-golden-brown { color: var(--golden-brown) !important; }
-.border-golden-brown { border-color: var(--golden-brown) !important; }
-
-/* Layout */
 .main-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem;           /* longer margins / breathing room */
+  padding: 4rem 2rem;
 }
 
-.page-content { min-height: calc(100vh - 8rem); }
-
-/* ===== Header ===== */
+/* HEADER */
 .header-gradient {
-  background: linear-gradient(90deg, #2E5234 10%, #5F7A44 55%, #EED9A1 100%);
+  background: linear-gradient(135deg, var(--hunter-green), var(--golden-brown));
   color: var(--pearl-white);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
-header h1 {
-  color: var(--pearl-white);
-  font-weight: 900;
-  letter-spacing: .5px;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.45); /* readable over gradient */
-}
-
-/* Top nav buttons */
 .nav-link {
   color: var(--pearl-white);
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 9999px;
   font-weight: 600;
-  transition: background-color .25s, transform .15s;
+  transition: all 0.2s ease;
 }
-.nav-link:hover {
-  background-color: rgba(255,255,255,0.25);
-  transform: translateY(-1px);
-}
+.nav-link:hover { background-color: rgba(255, 255, 255, 0.25); }
+.nav-link.active { background-color: rgba(255, 255, 255, 0.25); }
 
-/* ===== Cards ===== */
+/* CARDS */
 .card {
-  background: #fff;
-  border-left: 6px solid var(--gold);
+  background-color: white;
+  border-left: 6px solid var(--golden-brown);
   border-radius: 12px;
   box-shadow: var(--shadow);
   padding: 2.5rem;
   margin-bottom: 2.5rem;
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.18);
-  border-color: var(--accent-yellow);
-}
-
-/* “Our Story” tone/spacing */
 .story-card p {
   text-align: justify;
   text-indent: 1.25rem;
-  font-weight: 500;
   color: #2b2b2b;
 }
 
-/* Facts page rhythm */
-.facts-page p {
-  text-align: justify;
-  font-weight: 500;
-  color: #2b2b2b;
-}
-.facts-page ul li { margin-left: .75rem; }
-
-/* ===== Buttons (pill) ===== */
+/* BUTTONS */
 button, .primary-btn, .secondary-btn, a.primary-btn, a.secondary-btn {
   cursor: pointer;
   border: none;
   border-radius: 9999px;
-  padding: 1rem 2.25rem;
+  padding: 1rem 2.5rem;
   font-weight: 700;
   text-decoration: none;
-  transition: transform .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
+  transition: all 0.25s ease;
   box-shadow: var(--shadow);
 }
-
 .primary-btn {
   background-color: var(--golden-brown);
   color: var(--pearl-white);
@@ -108,9 +72,7 @@ button, .primary-btn, .secondary-btn, a.primary-btn, a.secondary-btn {
   background-color: var(--accent-yellow);
   color: var(--hunter-green);
   transform: translateY(-2px);
-  box-shadow: 0 0 12px rgba(255,255,240,0.6);
 }
-
 .secondary-btn {
   background-color: #444;
   color: var(--pearl-white);
@@ -118,10 +80,9 @@ button, .primary-btn, .secondary-btn, a.primary-btn, a.secondary-btn {
 .secondary-btn:hover {
   background-color: #222;
   transform: translateY(-2px);
-  box-shadow: 0 0 12px rgba(255,255,240,0.6);
 }
 
-/* ===== Images ===== */
+/* IMAGES */
 img {
   max-width: 95%;
   height: auto;
@@ -132,19 +93,12 @@ img {
   box-shadow: var(--shadow);
 }
 
-/* ===== Footer ===== */
+/* FOOTER */
 .footer-bar {
   background-color: var(--hunter-green);
   color: var(--pearl-white);
-  font-size: .95rem;
+  font-size: 0.9rem;
   margin-top: 3rem;
   padding: 1.5rem 0;
-  box-shadow: 0 -4px 6px rgba(0,0,0,0.18);
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .main-container { padding: 2rem 1rem; }
-  .card { padding: 1.8rem; }
-  button, .primary-btn, .secondary-btn { width: 100%; }
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
 }
