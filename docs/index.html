@@ -3,45 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DuDeEnGiNe</title>
-    <!-- Load Tailwind CSS -->
+    <title>Dude: My Service Animal & Web Star</title>
     <script src="https://cdn.tailwindcss.com"></script>
-  
-        /**
-         * Simple function to switch between the two "pages" (sections)
-         * in this single-file application.
-         */
-        function showPage(pageName) {
-            const storyPage = document.getElementById('story-page');
-            const factsPage = document.getElementById('facts-page');
-            const storyLink = document.getElementById('story-link');
-            const factsLink = document.getElementById('facts-link');
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="selection:bg-blue-200">
 
+    <header id="top" class="header-gradient text-white shadow-xl sticky top-0 z-10">
+        <div class="main-container mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold tracking-tight">Dude: My Service Animal</h1>
+            <nav>
+                <button onclick="showPage('story')" id="story-link" class="nav-link py-2 px-4 rounded-lg font-medium text-lg bg-white/10">Story & Pics</button>
+                <button onclick="showPage('facts')" id="facts-link" class="nav-link py-2 px-4 rounded-lg font-medium text-lg ml-3">Facts & Safety</button>
+            </nav>
+        </div>
+    </header>
 
-            if (pageName === 'story') {
-                storyPage.classList.remove('hidden');
-                factsPage.classList.add('hidden');
-                storyLink.classList.add('bg-white/10');
-                factsLink.classList.remove('bg-white/10');
-                document.title = "Dude: Story & Pics";
-            } else if (pageName === 'facts') {
-                storyPage.classList.add('hidden');
-                factsPage.classList.remove('hidden');
-                storyLink.classList.remove('bg-white/10');
-                factsLink.classList.add('bg-white/10');
-                document.title = "Dude: Facts & Safety";
+    <main class="main-container mx-auto p-4 md:p-8 page-content">
+
+        <!-- Story Section -->
+        <section id="story-page">
+            <div class="card p-6 md:p-10 rounded-xl text-center">
+                <h2 class="text-2xl font-bold mb-6 border-b pb-2 border-gray-200 text-blue-600">Picture: Dude in Action</h2>
+                <img src="mypic.jpg" alt="Dude the service animal in action" class="max-w-full h-auto rounded-lg shadow-lg mx-auto">
+                <p class="text-sm italic text-gray-500 mt-2">Dude is alert and focused, performing his duties.</p>
+            </div>
+
+            <div class="text-center pt-4">
+                <button onclick="showPage('facts')" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-md transform hover:scale-105">
+                    Continue to Facts & Safety Tips →
+                </button>
+            </div>
+        </section>
+
+        <!-- Facts Section -->
+        <section id="facts-page" class="hidden">
+            <div class="card p-6 md:p-10 rounded-xl text-center">
+                <h2 class="text-2xl font-bold mb-6 border-b pb-2 border-gray-200 text-blue-600">Picture: Dude Relaxing</h2>
+                <img src="8d32eb6e-6e2f-4ee4-8b59-8a14d0858ae0.jpg" alt="Dude relaxing off duty" class="max-w-full h-auto rounded-lg shadow-lg mx-auto">
+                <p class="text-sm italic text-gray-500 mt-2">Dude enjoying a quiet moment outdoors.</p>
+            </div>
+
+            <div class="text-center pt-4">
+                <button onclick="showPage('story')" class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-md transform hover:scale-105">
+                    ← Back to Story
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-4 mt-10">
+        <p class="text-sm">&copy; 2025 Dude's Web Page. Design by Gemini. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showPage(page) {
+            const story = document.getElementById('story-page');
+            const facts = document.getElementById('facts-page');
+            if (page === 'facts') {
+                story.classList.add('hidden');
+                facts.classList.remove('hidden');
+            } else {
+                facts.classList.add('hidden');
+                story.classList.remove('hidden');
             }
-
-
-            // Scroll to top of the content area for a clean view transition
-            document.getElementById('top').scrollIntoView();
         }
-
-
-        // Initialize the view on load
-        window.onload = () => {
-            showPage('story');
-        };
+        window.onload = () => showPage('story');
     </script>
 </body>
 </html>
