@@ -7,99 +7,121 @@
   --shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* BODY */
+/* ===== Base ===== */
 body {
   background-color: var(--pearl-white);
   color: var(--hunter-green);
   font-family: 'Inter', sans-serif;
   line-height: 1.7;
   margin: 0;
-  padding: 0;
   min-height: 100vh;
 }
 
-/* HEADER */
-.header-gradient {
-  background: linear-gradient(135deg, var(--hunter-green), var(--golden-brown));
-  color: var(--pearl-white);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-}
+/* Utility classes used in HTML */
+.text-golden-brown { color: var(--golden-brown) !important; }
+.border-golden-brown { border-color: var(--golden-brown) !important; }
 
-header h1 {
-  color: var(--pearl-white);
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
-}
-
-/* LAYOUT */
+/* Layout */
 .main-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 4rem 2rem;           /* longer margins / breathing room */
 }
 
-/* CARDS */
+.page-content { min-height: calc(100vh - 8rem); }
+
+/* ===== Header ===== */
+.header-gradient {
+  background: linear-gradient(90deg, #2E5234 10%, #5F7A44 55%, #EED9A1 100%);
+  color: var(--pearl-white);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+header h1 {
+  color: var(--pearl-white);
+  font-weight: 900;
+  letter-spacing: .5px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.45); /* readable over gradient */
+}
+
+/* Top nav buttons */
+.nav-link {
+  color: var(--pearl-white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: background-color .25s, transform .15s;
+}
+.nav-link:hover {
+  background-color: rgba(255,255,255,0.25);
+  transform: translateY(-1px);
+}
+
+/* ===== Cards ===== */
 .card {
-  background-color: white;
+  background: #fff;
   border-left: 6px solid var(--gold);
   border-radius: 12px;
   box-shadow: var(--shadow);
   padding: 2.5rem;
   margin-bottom: 2.5rem;
-  transition: transform 0.3s ease;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
-
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.18);
   border-color: var(--accent-yellow);
 }
 
-/* BUTTONS */
-button, a.primary-btn, a.secondary-btn {
+/* “Our Story” tone/spacing */
+.story-card p {
+  text-align: justify;
+  text-indent: 1.25rem;
+  font-weight: 500;
+  color: #2b2b2b;
+}
+
+/* Facts page rhythm */
+.facts-page p {
+  text-align: justify;
+  font-weight: 500;
+  color: #2b2b2b;
+}
+.facts-page ul li { margin-left: .75rem; }
+
+/* ===== Buttons (pill) ===== */
+button, .primary-btn, .secondary-btn, a.primary-btn, a.secondary-btn {
   cursor: pointer;
-  font-weight: 700;
   border: none;
-  border-radius: 30px;
-  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  padding: 1rem 2.25rem;
+  font-weight: 700;
   text-decoration: none;
-  transition: all 0.25s ease;
+  transition: transform .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
+  box-shadow: var(--shadow);
 }
 
 .primary-btn {
   background-color: var(--golden-brown);
   color: var(--pearl-white);
 }
-
 .primary-btn:hover {
   background-color: var(--accent-yellow);
   color: var(--hunter-green);
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255,255,240,0.6);
 }
 
 .secondary-btn {
   background-color: #444;
   color: var(--pearl-white);
 }
-
 .secondary-btn:hover {
   background-color: #222;
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255,255,240,0.6);
 }
 
-/* NAV LINKS */
-.nav-link {
-  color: var(--pearl-white);
-  font-weight: 600;
-  padding: 0.6rem 1.5rem;
-  border-radius: 20px;
-  transition: background-color 0.3s ease;
-}
-
-.nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-}
-
-/* IMAGES */
+/* ===== Images ===== */
 img {
   max-width: 95%;
   height: auto;
@@ -110,12 +132,19 @@ img {
   box-shadow: var(--shadow);
 }
 
-/* FOOTER */
+/* ===== Footer ===== */
 .footer-bar {
   background-color: var(--hunter-green);
   color: var(--pearl-white);
-  font-size: 0.9rem;
+  font-size: .95rem;
   margin-top: 3rem;
   padding: 1.5rem 0;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -4px 6px rgba(0,0,0,0.18);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .main-container { padding: 2rem 1rem; }
+  .card { padding: 1.8rem; }
+  button, .primary-btn, .secondary-btn { width: 100%; }
 }
