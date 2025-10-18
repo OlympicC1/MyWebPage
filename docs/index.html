@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dude: My Service Animal</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="selection:bg-yellow-200 bg-[var(--pearl-white)] text-[var(--hunter-green)]">
+<body class="selection:bg-yellow-200">
+  <!-- Header -->
   <header id="top" class="header-gradient shadow-xl sticky top-0 z-10">
     <div class="main-container flex justify-between items-center">
-      <h1 class="text-3xl font-extrabold tracking-tight drop-shadow">Dude: My Service Animal</h1>
+      <h1 class="text-3xl font-extrabold tracking-tight">Dude: My Service Animal</h1>
       <nav>
         <button onclick="showPage('story')" id="story-link" class="nav-link bg-white/10">Story & Pics</button>
         <button onclick="showPage('facts')" id="facts-link" class="nav-link ml-3">Facts & Safety</button>
@@ -19,11 +20,12 @@
     </div>
   </header>
 
+  <!-- Main Content -->
   <main class="main-container page-content">
 
     <!-- STORY PAGE -->
-    <section id="story-page" class="space-y-10">
-      <div class="text-center pt-6 pb-4">
+    <section id="story-page" class="space-y-12">
+      <div class="text-center pt-4 pb-2">
         <p class="text-lg font-medium text-gray-700">
           Meet the best boy, Dude — a Pitbull and German Shepherd mix.
         </p>
@@ -32,18 +34,18 @@
       <div class="card">
         <h2 class="text-2xl font-bold mb-4 border-b pb-2 text-golden-brown">Our Story</h2>
         <p>
-          Hi, I am his person. Dude is a remarkable 100-pound mix of Pitbull and German Shepherd — two incredible breeds known for their strength, intelligence, and loyalty. He is the kindest, goofiest, and most gentle dog, but he is also a highly trained service animal. His temperament allows him to be a companion first, while his protective instinct serves his primary job of ensuring my safety and well-being.
+          Hi, I am his person. Dude is a remarkable 100-pound mix of Pitbull and German Shepherd, two incredible breeds known for their strength, intelligence, and loyalty. He is the kindest, goofiest, and most gentle dog, but he is also a highly trained service animal. His temperament allows him to be a companion first, while his protective instinct serves his primary job of ensuring my safety and well-being.
         </p>
-        <p class="mt-3">
+        <p>
           The bond we share is unbreakable. Training him and working with him every day is a privilege, and he brings a constant sense of calm and security to my life. This page celebrates him, educates others about service animals, and shares safety tips for interacting with large, protective breeds.
         </p>
       </div>
 
       <div class="card text-center">
-        <h2 class="text-2xl font-bold mb-6 border-b pb-2 text-golden-brown">Picture: Dude by the Flowers</h2>
-        <img src="https://raw.githubusercontent.com/OlympicC1/DudeEngine/duedeengine-main/Flowers.jpg" alt="Dude sitting by the flowers" class="rounded-lg shadow-md mx-auto max-w-md">
+        <h2 class="text-2xl font-bold mb-4 border-b pb-2 text-golden-brown">Picture: Dude by the Flowers</h2>
+        <img src="8d32eb6e-6e2f-4ee4-8b59-8a14d0858ae0.jpg" alt="Dude sitting by the flowers" class="rounded-lg shadow-md mx-auto max-w-md my-6" />
         <p class="text-sm italic text-gray-600 mt-2">
-          Dude relaxing by the flowers — calm, steady, and always watching over.
+          Dude relaxing by the flowers calm, steady, and always watching over.
         </p>
       </div>
 
@@ -55,7 +57,7 @@
     </section>
 
     <!-- FACTS PAGE -->
-    <section id="facts-page" class="space-y-10 hidden">
+    <section id="facts-page" class="space-y-12 hidden">
       <div class="text-center pt-4 pb-2">
         <h2 class="text-3xl font-bold text-golden-brown">Dude's Breeds, Facts & Safety</h2>
         <p class="text-lg font-medium text-gray-700 mt-1">
@@ -69,7 +71,7 @@
           <p>
             Dude's blend of Pitbull and German Shepherd creates a dog with exceptional traits. The German Shepherd brings intelligence, courage, and a strong work ethic. The Pitbull lineage adds stability, a people-loving nature, and a soft hearted disposition toward family.
           </p>
-          <ul class="list-disc pl-5 space-y-2 mt-2">
+          <ul class="list-disc pl-5 space-y-2">
             <li><strong>Intelligence:</strong> German Shepherds are ranked among the most intelligent breeds.</li>
             <li><strong>Dedication:</strong> Pitbulls are known for their gentle loyalty and family focus.</li>
             <li><strong>Balance:</strong> This mix produces a loving protector with dependable instincts.</li>
@@ -81,23 +83,23 @@
           <p>
             Beyond individual service, breeds like Dude's ancestors serve society every day in life-saving and support roles:
           </p>
-          <ul class="list-disc pl-5 space-y-2 mt-2">
+          <ul class="list-disc pl-5 space-y-2">
             <li><strong>Search & Rescue (SAR):</strong> German Shepherds serve in rescue units worldwide.</li>
             <li><strong>Therapy & Support:</strong> Pitbulls and Shepherds provide emotional support to veterans and patients.</li>
             <li><strong>Detection Work:</strong> They excel in police, bomb, and drug detection fields.</li>
           </ul>
         </div>
       </div>
-      
+
       <div class="card text-center">
-        <h2 class="text-2xl font-bold mb-6 border-b pb-2 text-golden-brown">Picture: Dude with His Stick</h2>
-        <img src="https://raw.githubusercontent.com/OlympicC1/DudeEngine/duedeengine-main/stick.jpg" alt="Dude with a stick in his mouth" class="rounded-lg shadow-md mx-auto max-w-md">
+        <h2 class="text-2xl font-bold mb-4 border-b pb-2 text-golden-brown">Picture: Dude with His Stick</h2>
+        <img src="stick.jpg" alt="Dude with a stick in his mouth" class="rounded-lg shadow-md mx-auto max-w-md my-6" />
         <p class="text-sm italic text-gray-600 mt-2">
-          Dude showing off his strength and playful spirit — his favorite stick.
+          Dude showing off his strength and playful spirit, with his favorite stick.
         </p>
       </div>
 
-      <div class="text-center space-x-4 pt-4">
+      <div class="text-center space-x-4">
         <button onclick="showPage('story')" class="secondary-btn">
           ← Back to Story & Pics
         </button>
@@ -106,8 +108,9 @@
     </section>
   </main>
 
+
   <footer class="footer-bar text-center py-4 mt-8">
-    © 2025 Dude's Web Page. Design by Gemini. All rights reserved.
+    © 2025 Dude's Web Page All rights reserved.
   </footer>
 
   <script>
