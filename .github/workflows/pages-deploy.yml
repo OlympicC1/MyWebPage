@@ -1,0 +1,43 @@
+name: Deploy GitHub Pages (docs)
+
+on:
+  push:
+    branches:
+      - main
+      - dudeengine-main
+  workflow_dispatch: {}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ensure docs directory exists
+        run: |
+          if [ ! -d "docs" ]; then
+            echo "docs directory not found, aborting.";
+            exit 1;
+          fi
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: docs
+
+      - name: Deploy Pages (with retries)
+        uses: ./.github/actions/deploy-pages-retry
+        with:
+          max_attempts: '3'
+          base_delay: '6'
+
+      - name: Final status
+        if: ${{ failure() }}
+        run: |
+          echo "Deployment step failed. If this was a 5xx server error, try re-running the workflow in a few minutes."

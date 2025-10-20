@@ -1,0 +1,42 @@
+name: Deploy Pages with retry
+description: Composite action that runs actions/deploy-pages@v4 with up to three attempts.
+inputs:
+  max_attempts:
+    description: 'Maximum number of attempts (1-3)'
+    required: false
+    default: '3'
+  base_delay:
+    description: 'Base delay in seconds between retries'
+    required: false
+    default: '5'
+runs:
+  using: composite
+  steps:
+    - name: Attempt 1
+      id: attempt1
+      uses: actions/deploy-pages@v4
+      continue-on-error: true
+
+    - name: Wait before retry (after attempt 1 failure)
+      if: ${{ steps.attempt1.outcome != 'success' && inputs.max_attempts != '1' }}
+      shell: bash
+      run: |
+        echo "Attempt 1 failed; waiting ${INPUT_BASE_DELAY:-${{ inputs.base_delay }}}s before retry..."
+        sleep ${{ inputs.base_delay }}
+
+    - name: Attempt 2
+      if: ${{ steps.attempt1.outcome != 'success' && inputs.max_attempts != '1' }}
+      id: attempt2
+      uses: actions/deploy-pages@v4
+      continue-on-error: true
+
+    - name: Wait before retry (after attempt 2 failure)
+      if: ${{ steps.attempt2.outcome != 'success' && inputs.max_attempts == '3' }}
+      shell: bash
+      run: |
+        echo "Attempt 2 failed; waiting ${INPUT_BASE_DELAY:-${{ inputs.base_delay }}}s before final retry..."
+        sleep ${{ inputs.base_delay }}
+
+    - name: Attempt 3
+      if: ${{ steps.attempt1.outcome != 'success' && steps.attempt2.outcome != 'success' && inputs.max_attempts == '3' }}
+      uses: actions/deploy-pages@v4
