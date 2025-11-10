@@ -3,7 +3,7 @@
 DudeEngine * curated, photo-first static site presenting "Dude: My Service Animal"
 
 Live
-- Demo: https://olympicc1.github.io/DudeEngine/  
+- Demo: https://smithsoni3n.github.io/DudeEngine/  
 - Status: Website launched — final site is live
 
 ────────────────────────────────────────────────────────
